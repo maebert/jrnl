@@ -93,6 +93,18 @@ log_question 'What did I achieve today?'
 log_question 'What did I make progress with?'
 ```
 
+### Display random entry
+
+You can use this to select one title at random and then display the whole
+entry. The invocation of `cut` needs to match the format of the timestamp.
+For timestamps that have a space between data and time components, select
+fields 1 and 2 as shown. For timestamps that have no whitespace, select
+only field 1.
+
+``` sh
+jrnl -on "$(jrnl --short | shuf -n 1 | cut -d' ' -f1,2)"
+```
+
 ## External editors
 
 To use external editors for writing and editing journal entries, set
