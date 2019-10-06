@@ -37,7 +37,8 @@ jrnl today at 3am: I just met Steve Buscemi in a bar! He looked funny.
 !!! note
     Most shell contains a certain number of reserved characters, such as `#`
     and `*`. Unbalanced quotes, parenthesis, and so on will also get into
-    the way of your editing. For writing longer entries, just enter `jrnl`
+    the way of your editing.
+    For writing longer entries, just enter `jrnl`
     and hit `return`. Only then enter the text of your journal entry.
     Alternatively, `use an external editor <advanced>`).
 
@@ -75,9 +76,9 @@ The following options are equivalent:
   - `jrnl Best day of my life.*`
 
 !!! note
-   Just make sure that the asterisk sign is **not** surrounded by
-   whitespaces, e.g. `jrnl Best day of my life! *` will **not** work (the
-   reason being that the `*` sign has a special meaning on most shells).
+    Just make sure that the asterisk sign is **not** surrounded by
+    whitespaces, e.g. `jrnl Best day of my life! *` will **not** work (the
+    reason being that the `*` sign has a special meaning on most shells).
 
 ## Viewing
 
@@ -126,16 +127,16 @@ You can change which symbols you'd like to use for tagging in the
 configuration.
 
 !!! note
-   `jrnl @pinkie @WorldDomination` will switch to viewing mode because
-   although **no** command line arguments are given, all the input strings
-   look like tags - *jrnl* will assume you want to filter by tag.
+    `jrnl @pinkie @WorldDomination` will switch to viewing mode because
+    although **no** command line arguments are given, all the input strings
+    look like tags - *jrnl* will assume you want to filter by tag.
 
 ## Editing older entries
 
 You can edit selected entries after you wrote them. This is particularly
-useful when your journal file is encrypted or if you're using a DayOne
-journal. To use this feature, you need to have an editor configured in
-your journal configuration file (see `advanced usage <advanced>`)
+useful when your journal file is encrypted. To use this feature, you need
+to have an editor configured in your journal configuration file (see
+`advanced usage <advanced>`)
 
 ``` sh
 jrnl -until 1950 @texas -and @history --edit
@@ -158,24 +159,3 @@ jrnl @girlfriend -until 'june 2012' --edit
 
 Just select all text, press delete, and everything is gone...
 
-### Editing DayOne Journals
-
-DayOne journals can be edited exactly the same way, however the output
-looks a little bit different because of the way DayOne stores its
-entries:
-
-``` output
-# af8dbd0d43fb55458f11aad586ea2abf
-2013-05-02 15:30 I told everyone I built my @robot wife for sex.
-But late at night when we're alone we mostly play Battleship.
-
-# 2391048fe24111e1983ed49a20be6f9e
-2013-08-10 03:22 I had all kinds of plans in case of a @zombie attack.
-I just figured I'd be on the other side.
-```
-
-The long strings starting with hash symbol are the so-called UUIDs,
-unique identifiers for each entry. Don't touch them. If you do, then the
-old entry would get deleted and a new one written, which means that you
-could lose DayOne data that jrnl can't handle (such as as the entry's
-geolocation).
